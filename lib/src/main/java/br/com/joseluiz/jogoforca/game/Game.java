@@ -1,16 +1,19 @@
 package br.com.joseluiz.jogoforca.game;
 
+import br.com.joseluiz.jogoforca.core.Dictionary;
 import br.com.joseluiz.jogoforca.core.Word;
 
 public class Game {
 
 	public void start() {
-		Word word = new Word("casa");
-		word.hasChar('a');
-		word.hasChar('c');
-		word.hasChar('s');
-		System.out.println(word);
-		System.out.println(word.discovered());
+
+		Dictionary d = Dictionary.getInstance();
+		System.out.println(d);
+		
+		Word w = d.nextWord();
+		System.out.println(w.getOriginalWord());
+		
+		
 	}
 
 }
