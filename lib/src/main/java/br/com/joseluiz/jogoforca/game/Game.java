@@ -11,7 +11,7 @@ import br.com.joseluiz.jogoforca.ui.UI;
 
 public class Game {
 
-	public void start() {
+	public void start(String[] args) {
 
 		UI.print("Bem vindo ao jogo da Forca!");
 		
@@ -22,6 +22,10 @@ public class Game {
 		
 		Set<Character> usedChar = new HashSet<>();
 		int errorCount = 0;
+		
+		if (args.length > 0) {
+			Config.setMaxErrors(args[0]);
+		}
 		
 		int maxErrors = Integer.parseInt(Config.get("maxErrors"));
 		UI.print("Voce pode errar no máximo: " + maxErrors + " vez(es)!");
